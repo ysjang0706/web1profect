@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome HTML5, CSS3, Javascript </h1>
+    <h1 id="content">Welcome HTML5, CSS3, Javascript</h1>
+
+    <script>
+        const messages = [
+            "Welcome HTML5, CSS3, Javascript",
+            "Learn to code with fun!",
+            "Build amazing web applications",
+            "Stay curious and keep learning"
+        ];
+
+        const colors = [
+            "#FF5733", // Red
+            "#33FF57", // Green
+            "#3357FF", // Blue
+            "#FF33A1"  // Pink
+        ];
+
+        let index = 0;
+        const contentElement = document.getElementById('content');
+
+        function changeContent() {
+            index = (index + 1) % messages.length;
+            contentElement.textContent = messages[index];
+            document.body.style.backgroundColor = colors[index];
+        }
+
+        setInterval(changeContent, 3000);
+    </script>
 </body>
 </html>
